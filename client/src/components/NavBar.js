@@ -4,19 +4,16 @@ import useDarkMode from '../hooks/useDarkMode';
 const Navbar = () => {
   
   const [darkMode, setDarkMode] = useDarkMode(false);
-  const toggleMode = e => {
+
+  const darkModeToggler = e => {
     e.preventDefault();
     setDarkMode(!darkMode);
   };
+
   return (
     <nav className="navbar">
       <h1>Women's World Cup players ranked by search interest</h1>
-      <div className="dark-mode__toggle">
-        <div
-          onClick={toggleMode}
-          className={darkMode ? 'toggle toggled' : 'toggle'}
-        />
-      </div>
+    <button onClick={darkModeToggler}>Dark Mode</button>
     </nav>
   );
 };
