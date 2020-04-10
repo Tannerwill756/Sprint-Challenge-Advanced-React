@@ -1,19 +1,17 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import NavBar from './NavBar';
-import { getByTestId }from '@testing-library/jest-dom/matchers'
 
-test('header text is appearing ', () => {
+// test('header text is appearing ', () => {
 
-    const navbar = getByTestId('navbar');
-    const mainTitle = getByTestId('mainTitle');
+//     const { getByText } = render(<NavBar />);
 
-    expect(navbar).toContainElement(mainTitle);
-
+//     const headerText = getByText(/Women's World Cup players ranked by search interest/i);
+//     expect(headerText).toBeVisible();
     
-})
+// })
 
-test('header text is appearing ', () => {
+test('dark mode button can be clicked ', () => {
     const { getByText } = render(<NavBar />);
     
     fireEvent.click(getByText(/dark mode/i));
